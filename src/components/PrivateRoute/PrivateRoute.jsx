@@ -7,7 +7,7 @@ export default function PrivateRoute({ children, ...routeProps }) {
   const location = useLocation();
   return (
     <Route {...routeProps}>
-      {user ? (
+      {user.email ? (
         children
       ) : (
         <Redirect to={{ pathname: '/login', state: { from: location } }} />
